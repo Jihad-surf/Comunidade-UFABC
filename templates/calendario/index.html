@@ -1,0 +1,187 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=devide-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+    <title>UfabcGrade</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <h1>Montador de Grades </h1>
+        <img class="logo" src="{% static 'img/logo.png' %}" alt="logo UFABC">
+    </header>
+    <form method="get">
+        <label for="ra">Insira o seu RA:</label>
+        <input id="ra" type="text" required>
+    </form>
+    <section class="semana1">
+        <h2 class="semana1__titulo">Semana 1</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="cell__horario"></th>
+                    <th class="cell__dia">Seg</th>
+                    <th class="cell__dia">Ter</th>
+                    <th class="cell__dia">Qua</th>
+                    <th class="cell__dia">Qui</th>
+                    <th class="cell__dia">Sex</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="cell__horario-linha">08:00 - 10:00</td>
+                    <td style="background-color: {{segunda.8.cor}};">{{ segunda.8.materia }}</td>
+                    <td style="background-color: {{terca.8.cor}};">{{ terca.8.materia }}</td>
+                    <td style="background-color: {{quarta.8.cor}};">{{ quarta.8.materia }}</td>
+                    <td style="background-color: {{quinta.8.cor}};">{{ quinta.8.materia }}</td>
+                    <td style="background-color: {{sexta.8.cor}};">{{ sexta.8.materia }}</td>
+                </tr>
+                <tr>
+                    <td class="cell__horario-linha">10:00 - 12:00</td>
+                    <td style="background-color: {{segunda.10.cor}};">{{ segunda.10.materia }}</td>
+                    <td style="background-color: {{terca.10.cor}};">{{ terca.10.materia }}</td>
+                    <td style="background-color: {{quarta.10.cor}};">{{ quarta.10.materia }}</td>
+                    <td style="background-color: {{quinta.10.cor}};">{{ quinta.10.materia }}</td>
+                    <td style="background-color: {{sexta.10.cor}};">{{ sexta.10.materia }}</td>
+                </tr>
+                <tr>
+                    <td class="cell__horario-linha">12:00 - 14:00</td>
+                    <td style="background-color: {{segunda.12.cor}};">{{ segunda.12.materia }}</td>
+                    <td style="background-color: {{terca.12.cor}};">{{ terca.12.materia }}</td>
+                    <td style="background-color: {{quarta.12.cor}};">{{ quarta.12.materia }}</td>
+                    <td style="background-color: {{quinta.12.cor}};">{{ quinta.12.materia }}</td>
+                    <td style="background-color: {{sexta.12.cor}};">{{ sexta.12.materia }}</td>
+                </tr>
+                <tr>
+                    <td class="cell__horario-linha">14:00 - 16:00</td>
+                    <td style="background-color: {{segunda.14.cor}};">{{ segunda.14.materia }}</td>
+                    <td style="background-color: {{terca.14.cor}};">{{ terca.14.materia }}</td>
+                    <td style="background-color: {{quarta.14.cor}};">{{ quarta.14.materia }}</td>
+                    <td style="background-color: {{quinta.14.cor}};">{{ quinta.14.materia }}</td>
+                    <td style="background-color: {{sexta.14.cor}};">{{ sexta.14.materia }}</td>
+                </tr>
+                <tr>
+                    <td class="cell__horario-linha">16:00 - 18:00</td>
+                    <td style="background-color: {{segunda.16.cor}};">{{ segunda.16.materia }}</td>
+                    <td style="background-color: {{terca.16.cor}};">{{ terca.16.materia }}</td>
+                    <td style="background-color: {{quarta.16.cor}};">{{ quarta.16.materia }}</td>
+                    <td style="background-color: {{quinta.16.cor}};">{{ quinta.16.materia }}</td>
+                    <td style="background-color: {{sexta.16.cor}};">{{ sexta.16.materia }}</td>
+                </tr>
+                <tr>
+                    <td class="cell__horario-linha">18:00 - 19:00</td>
+                    <td style="background-color: {{segunda.18.cor}};">{{ segunda.18.materia }}</td>
+                    <td style="background-color: {{terca.18.cor}};">{{ terca.18.materia }}</td>
+                    <td style="background-color: {{quarta.18.cor}};">{{ quarta.18.materia }}</td>
+                    <td style="background-color: {{quinta.18.cor}};">{{ quinta.18.materia }}</td>
+                    <td style="background-color: {{sexta.18.cor}};">{{ sexta.18.materia }}</td>
+                </tr>
+                <tr>
+                    <td class="cell__horario-linha">19:00 - 21:00</td>
+                    <td style="background-color: {{segunda.19.cor}};">{{ segunda.19.materia }}</td>
+                    <td style="background-color: {{terca.19.cor}};">{{ terca.19.materia }}</td>
+                    <td style="background-color: {{quarta.19.cor}};">{{ quarta.19.materia }}</td>
+                    <td style="background-color: {{quinta.19.cor}};">{{ quinta.19.materia }}</td>
+                    <td style="background-color: {{sexta.19.cor}};">{{ sexta.19.materia }}</td>
+                </tr>
+                <tr>
+                    <td class="cell__horario-linha">21:00 - 23:00</td>
+                    <td style="background-color: {{segunda.21.cor}};">{{ segunda.21.materia }}</td>
+                    <td style="background-color: {{terca.21.cor}};">{{ terca.21.materia }}</td>
+                    <td style="background-color: {{quarta.21.cor}};">{{ quarta.21.materia }}</td>
+                    <td style="background-color: {{quinta.21.cor}};">{{ quinta.21.materia }}</td>
+                    <td style="background-color: {{sexta.21.cor}};">{{ sexta.21.materia }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section class="semana2">
+        <h2 class="semana2__titulo">Semana 2</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="cell__horario"></th>
+                    <th class="cell__dia">Seg</th>
+                    <th class="cell__dia">Ter</th>
+                    <th class="cell__dia">Qua</th>
+                    <th class="cell__dia">Qui</th>
+                    <th class="cell__dia">Sex</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="cell__horario-linha">08:00 - 10:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="cell__horario-linha1">10:00 - 12:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="cell__horario-linha">12:00 - 14:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="cell__horario-linha1">14:00 - 16:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="cell__horario-linha">16:00 - 18:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="cell__horario-linha1">18:00 - 19:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="cell__horario-linha">19:00 - 21:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="cell__horario-linha1">21:00 - 23:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section>
+        <p>Observações</p>
+    </section>
+</body>
+</html>
