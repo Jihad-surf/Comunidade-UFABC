@@ -25,8 +25,35 @@ class TurmaPorRA(models.Model):
 class Salas(models.Model):
     cod = models.CharField(max_length=30)
     turma = models.CharField(max_length=100)
-    horarios_teoria = models.CharField(max_length=250)
-    horarios_pratica = models.CharField(max_length=250)
     tpi = models.CharField(max_length=20)
     docente_teoria = models.CharField(max_length=100)
     docente_pratica = models.CharField(max_length=100)
+    dia1=models.CharField(max_length=30,default='')
+    horario1=models.CharField(max_length=30, default='')
+    sala1=models.CharField(max_length=30, default='')
+    frequencia1=models.CharField(max_length=30, default='')
+
+    dia2=models.CharField(max_length=30, default='')
+    horario2=models.CharField(max_length=30, default='')
+    sala2=models.CharField(max_length=30, default='')
+    frequencia2=models.CharField(max_length=30, default='')
+
+    dia3=models.CharField(max_length=30, default='')
+    horario3=models.CharField(max_length=30, default='')
+    sala3=models.CharField(max_length=30, default='')
+    frequencia3=models.CharField(max_length=30, default='')
+
+    dia4=models.CharField(max_length=30, default='')
+    horario4=models.CharField(max_length=30, default='' )
+    sala4=models.CharField(max_length=30, default='')
+    frequencia4=models.CharField(max_length=30 , default='')
+
+    dia5=models.CharField(max_length=30, default='')
+    horario5=models.CharField(max_length=30, default='')
+    sala5=models.CharField(max_length=30, default='')
+    frequencia5=models.CharField(max_length=30, default='')
+
+    dia6=models.CharField(max_length=30, default='')
+    horario6=models.CharField(max_length=30, default='')
+    sala6=models.CharField(max_length=30, default='')
+    frequencia6=models.CharField(max_length=30, default='')

@@ -1,7 +1,15 @@
+
+
 from django.db import migrations
+
+
+
 
 def inserir_dados_iniciais(apps, schema_editor):
     from PyPDF2 import PdfReader
+
+
+
 
     with open(r"C:\Users\Jihad\Desktop\projetos\dados\ajuste_2023_1_deferidos_pos_ajuste.pdf", 'rb') as f:
         pdf = PdfReader(f)
@@ -9,10 +17,16 @@ def inserir_dados_iniciais(apps, schema_editor):
         for pagina in pdf.pages:
             texto_completo += pagina.extract_text()
 
+
+
+
     with open(r"C:\Users\Jihad\Desktop\projetos\dados\reajuste_2023_01_matriculas_deferidas.pdf", 'rb') as f:
         pdf = PdfReader(f)
         for pagina in pdf.pages:
             texto_completo += pagina.extract_text()
+
+
+
 
     # Extrair as informações das colunas de interesse
     coluna_ra = []
@@ -23,10 +37,13 @@ def inserir_dados_iniciais(apps, schema_editor):
         campos = linha.split()
         coluna_ra.append(campos[0])
         coluna_turma.append(campos[1])
-    
+   
     Aula = apps.get_model('calendarioapp', 'TurmaPorRA')
     for ra, turma in zip(coluna_ra, coluna_turma):
         Aula.objects.create(ra=ra, codigo_turma=turma)
+
+
+
 
 class Migration(migrations.Migration):
     dependencies = [
