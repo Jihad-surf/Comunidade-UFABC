@@ -21,3 +21,12 @@ class HorarioAula(models.Model):
 class TurmaPorRA(models.Model):
     ra = models.CharField(max_length=15)
     codigo_turma = models.CharField(max_length=25)
+
+class Salas(models.Model):
+    cod = models.CharField(max_length=30)
+    turma = models.CharField(max_length=100)
+    horarios_teoria = models.CharField(max_length=250)
+    horarios_pratica = models.CharField(max_length=250)
+    tpi = models.CharField(max_length=20)
+    docente_teoria = models.CharField(max_length=100)
+    docente_pratica = models.CharField(max_length=100)
