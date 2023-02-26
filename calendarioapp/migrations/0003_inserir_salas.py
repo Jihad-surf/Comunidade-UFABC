@@ -1,13 +1,7 @@
 from django.db import migrations
 
-
-
-
 def inserir_dados_salas(apps, schema_editor):
     import pandas as pd
-
-
-
 
     df = pd.read_excel(r"C:\Users\Jihad\Desktop\projetos\dados\turmas_salas_docentes_2023_1.xlsb",sheet_name=' turmas sistema atual')
     df = df[['CÓDIGO DE TURMA', 'TURMA', 'Horário Teoria', 'Horário Prática','TPI','Docente Teoria','Docente Prática']]
@@ -19,9 +13,6 @@ def inserir_dados_salas(apps, schema_editor):
                                       'dia5', 'horario5', 'sala5', 'frequencia5',
                                       'dia6', 'horario6', 'sala6', 'frequencia6'])
     df = df.join(novas_colunas)
-
-
-
 
     df.fillna('', inplace=True)
     i = 0
@@ -35,6 +26,7 @@ def inserir_dados_salas(apps, schema_editor):
             else:
                 df.loc[i, 'sala1'] = dados[1].replace(' ', '').split('sala')[1]
             df.loc[i, 'frequencia1'] = dados[2]
+
         if len(dados)>=5:
             df.loc[i, 'dia2'] = dados[3].split()[0]
             df.loc[i, 'horario2'] = dados[3].split()[2]
@@ -43,15 +35,13 @@ def inserir_dados_salas(apps, schema_editor):
             else:
                 df.loc[i, 'sala2'] = dados[1].replace(' ', '').split('sala')[1]
             df.loc[i, 'frequencia2'] = dados[5]
+            
         if len(dados)>=8:
             df.loc[i, 'dia3'] = dados[6].split()[0]
             df.loc[i, 'horario3'] = dados[6].split()[2]
             df.loc[i, 'sala3'] = dados[7].replace(' ', '').split('sala')[1]
             df.loc[i, 'frequencia3'] = dados[8]
         i += 1
-
-
-
 
     i = 0
     for dados in df['Horário Prática']:

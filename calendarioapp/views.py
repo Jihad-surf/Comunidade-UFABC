@@ -3,24 +3,29 @@ from calendarioapp.models import HorarioAula, TurmaPorRA, Salas
 
 # Create your views here.
 def index(request):
+    dados = None
+
     if 'ra' in request.GET:
         ra = request.GET['ra']
         materias = TurmaPorRA.objects.filter(ra=ra)
 
-        q1seg_8 = ''
-        q1seg_10 = ''
-        q1seg_14 = ''
-        q1seg_16 = ''
-        q1seg_19 = ''
-        q1seg_21 = ''
-        q2seg_8 = ''
-        q2seg_10 = ''
-        q2seg_14 = ''
-        q2seg_16 = ''
-        q2seg_19 = ''
-        q2seg_21 = ''
-        
+        dados = {}
 
+        dias_for = ['segunda', 'terça', 'quarta', 'quinta', 'sexta']
+        horarios_for =['8', '10','14','16','19', '21']
+        semanas = ['q1','q2']
+        colors = ['#fff8bbf8', '#bbc9fff8', '#ceffbbf8', '#fcbbfff8', '#ffbbbbf8', '#ffbbbbf8', '#ffbbbbf8', '#ffbbbbf8']
+        
+        #declarar variaveis
+        for semana in semanas:
+            for day in dias_for:
+                for time in horarios_for:
+                    nome_var = semana+day+"_"+time
+                    valor_var = ''
+                    dados[nome_var] = valor_var
+                    dados[nome_var+'cor'] = valor_var
+
+        i = 0       
         for materia in materias:
             infos = Salas.objects.filter(cod=materia.codigo_turma)
             for info in infos:
@@ -30,83 +35,91 @@ def index(request):
                 frequencias = [info.frequencia1, info.frequencia2 , info.frequencia3, info.frequencia4, info.frequencia5, info.frequencia6]
                 
                 for dia,horario,sala,frequencia in zip(dias,horarios,salas,frequencias):
-                    dias_for = ['segunda', 'terça', 'quarta', 'quinta', 'sexta']
-                    for dia_for in dia_for:
+                    for dia_for in dias_for:
                         if dia == dia_for:
                             if horario == "08:00":
                                 #ajustar as variaveis, usar o vars()[dia] , declarar tudo antes para n dar erro, otimizar a declaração
                                 if frequencia == 'quinzenal I':
-                                    q1seg_8 = info.turma + dia + sala
+                                    dados['q1'+dia_for+'_8']= info.turma + dia + sala
+                                    dados['q1'+dia_for+'_8cor'] = colors[i]
                                 elif frequencia == 'quinzenal II':
-                                    q2seg_8 = info.turma + dia + sala
+                                    dados['q2'+dia_for+'_8'] = info.turma + dia + sala
+                                    dados['q2'+dia_for+'_8cor'] = colors[i]
                                 else:
-                                    q1seg_8 = info.turma + dia + sala
-                                    q2seg_8 = info.turma + dia + sala
+                                    dados['q1'+dia_for+'_8'] = info.turma + dia + sala
+                                    dados['q2'+dia_for+'_8'] = info.turma + dia + sala
+                                    dados['q1'+dia_for+'_8cor'] = colors[i]
+                                    dados['q2'+dia_for+'_8cor'] = colors[i]
 
-                            if horario == "10:00":
+                            elif horario == "10:00":
                                 if frequencia == 'quinzenal I':
-                                    q1seg_10 = info.turma + dia + sala
+                                    dados['q1'+dia_for+'_10']= info.turma + dia + sala
+                                    dados['q1'+dia_for+'_10cor'] = colors[i]
                                 elif frequencia == 'quinzenal II':
-                                    q2seg_10 = info.turma + dia + sala
+                                    dados['q2'+dia_for+'_10'] = info.turma + dia + sala
+                                    dados['q2'+dia_for+'_10cor'] = colors[i]
                                 else:
-                                    q1seg_10 = info.turma + dia + sala
-                                    q2seg_10 = info.turma + dia + sala
+                                    dados['q1'+dia_for+'_10'] = info.turma + dia + sala
+                                    dados['q2'+dia_for+'_10'] = info.turma + dia + sala
+                                    dados['q1'+dia_for+'_10cor'] = colors[i]
+                                    dados['q2'+dia_for+'_10cor'] = colors[i]
 
-                            if horario == "14:00":
+                            elif horario == "14:00":
                                 if frequencia == 'quinzenal I':
-                                    q1seg_14 = info.turma + dia + sala
+                                    dados['q1'+dia_for+'_14']= info.turma + dia + sala
+                                    dados['q1'+dia_for+'_14cor'] = colors[i]
                                 elif frequencia == 'quinzenal II':
-                                    q2seg_14 = info.turma + dia + sala
+                                    dados['q2'+dia_for+'_14'] = info.turma + dia + sala
+                                    dados['q2'+dia_for+'_14cor'] = colors[i]
                                 else:
-                                    q1seg_14 = info.turma + dia + sala
-                                    q2seg_14 = info.turma + dia + sala
+                                    dados['q1'+dia_for+'_14'] = info.turma + dia + sala
+                                    dados['q2'+dia_for+'_14'] = info.turma + dia + sala
+                                    dados['q1'+dia_for+'_14cor'] = colors[i]
+                                    dados['q2'+dia_for+'_14cor'] = colors[i]
 
-                            if horario == "16:00":
+                            elif horario == "16:00":
                                 if frequencia == 'quinzenal I':
-                                    q1seg_16 = info.turma + dia + sala
+                                    dados['q1'+dia_for+'_16']= info.turma + dia + sala
+                                    dados['q1'+dia_for+'_16cor'] = colors[i]
                                 elif frequencia == 'quinzenal II':
-                                    q2seg_16 = info.turma + dia + sala
+                                    dados['q2'+dia_for+'_16'] = info.turma + dia + sala
+                                    dados['q2'+dia_for+'_16cor'] = colors[i]
                                 else:
-                                    q1seg_16 = info.turma + dia + sala
-                                    q2seg_16 = info.turma + dia + sala
+                                    dados['q1'+dia_for+'_16'] = info.turma + dia + sala
+                                    dados['q2'+dia_for+'_16'] = info.turma + dia + sala
+                                    dados['q1'+dia_for+'_16cor'] = colors[i]
+                                    dados['q2'+dia_for+'_16cor'] = colors[i]
 
-                            if horario == "19:00":
+
+
+                            elif horario == "19:00":
                                 if frequencia == 'quinzenal I':
-                                    q1seg_19 = info.turma + dia + sala
+                                    dados['q1'+dia_for+'_19']= info.turma + dia + sala
+                                    dados['q1'+dia_for+'_19cor'] = colors[i]
                                 elif frequencia == 'quinzenal II':
-                                    q2seg_19 = info.turma + dia + sala
+                                    dados['q2'+dia_for+'_19'] = info.turma + dia + sala
+                                    dados['q2'+dia_for+'_19cor'] = colors[i]
                                 else:
-                                    q1seg_19 = info.turma + dia + sala
-                                    q2seg_19 = info.turma + dia + sala
+                                    dados['q1'+dia_for+'_19'] = info.turma + dia + sala
+                                    dados['q2'+dia_for+'_19'] = info.turma + dia + sala
+                                    dados['q1'+dia_for+'_19cor'] = colors[i]
+                                    dados['q2'+dia_for+'_19cor'] = colors[i]
 
-                            if horario == "21:00":
+
+                            elif horario == "21:00":
                                 if frequencia == 'quinzenal I':
-                                    q1seg_21 = info.turma + dia + sala
+                                    dados['q1'+dia_for+'_21']= info.turma + dia + sala
+                                    dados['q1'+dia_for+'_21cor'] = colors[i]
                                 elif frequencia == 'quinzenal II':
-                                    q2seg_21 = info.turma + dia + sala
+                                    dados['q2'+dia_for+'_21'] = info.turma + dia + sala
+                                    dados['q2'+dia_for+'_21cor'] = colors[i]
                                 else:
-                                    q1seg_21 = info.turma + dia + sala
-                                    q2seg_21 = info.turma + dia + sala
-
-                        
-                        dados = {
-                            "q1seg_08": q1seg_8,
-                            "q1seg_10": q1seg_10,
-                            "q1seg_14": q1seg_14,
-                            "q1seg_16": q1seg_16,
-                            "q1seg_19": q1seg_19,
-                            "q1seg_21": q1seg_21,
-                            "q2seg_08": q2seg_8,
-                            "q2seg_10": q2seg_10,
-                            "q2seg_14": q2seg_14,
-                            "q2seg_16": q2seg_16,
-                            "q2seg_19": q2seg_19,
-                            "q2seg_21": q2seg_21,
-                            # preencha mais informações aqui
-                        }
-
-    else:
-        dados = None
+                                    dados['q1'+dia_for+'_21'] = info.turma + dia + sala
+                                    dados['q2'+dia_for+'_21'] = info.turma + dia + sala
+                                    dados['q1'+dia_for+'_21cor'] = colors[i]
+                                    dados['q2'+dia_for+'_21cor'] = colors[i]
+                
+            i+=1
 
     return render(request, 'calendario/index.html',dados)
 
