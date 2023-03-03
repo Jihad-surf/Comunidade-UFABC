@@ -64,4 +64,34 @@ class Migration(migrations.Migration):
                 ('codigo_turma', models.CharField(max_length=25)),
             ],
         ),
+        migrations.AddField(
+            model_name='salas',
+            name='horario1_fim',
+            field=models.CharField(default='', max_length=30),
+        ),
+        migrations.AddField(
+            model_name='salas',
+            name='horario2_fim',
+            field=models.CharField(default='', max_length=30),
+        ),
+        migrations.AddField(
+            model_name='salas',
+            name='horario3_fim',
+            field=models.CharField(default='', max_length=30),
+        ),
+        migrations.AddField(
+            model_name='salas',
+            name='horario4_fim',
+            field=models.CharField(default='', max_length=30),
+        ),
+        migrations.AddField(
+            model_name='salas',
+            name='horario5_fim',
+            field=models.CharField(default='', max_length=30),
+        ),
+        migrations.AddField(
+            model_name='salas',
+            name='horario6_fim',
+            field=models.CharField(default='', max_length=30),
+        ),
     ]

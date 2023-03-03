@@ -1,8 +1,8 @@
-from django.db import migrations
+from calendarioapp.models import TurmaPorRA
+from PyPDF2 import PdfReader
 
-def inserir_dados_iniciais(apps, schema_editor):
-    from PyPDF2 import PdfReader
 
+def run():
     with open(r"C:\Users\Jihad\Desktop\projetos\dados\ajuste_2023_1_deferidos_pos_ajuste.pdf", 'rb') as f:
         pdf = PdfReader(f)
         texto_completo = ''
@@ -24,14 +24,7 @@ def inserir_dados_iniciais(apps, schema_editor):
         coluna_ra.append(campos[0])
         coluna_turma.append(campos[1])
    
-    Aula = apps.get_model('calendarioapp', 'TurmaPorRA')
+    TurmaPorRA.objects.all().delete()
     for ra, turma in zip(coluna_ra, coluna_turma):
-        Aula.objects.create(ra=ra, codigo_turma=turma)
+        TurmaPorRA.objects.create(ra=ra, codigo_turma=turma)
 
-class Migration(migrations.Migration):
-    dependencies = [
-        ('calendarioapp', '0001_initial'),
-    ]
-    operations = [
-        migrations.RunPython(inserir_dados_iniciais),
-    ]
