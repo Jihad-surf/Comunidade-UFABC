@@ -130,6 +130,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static'),
 ]
 
+STATICFILES_STORAGE="whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 # ao rodar o python manage.py collectstatic ele ira salvar os arquivos aqui:
 
 # Default primary key field type
