@@ -132,6 +132,10 @@ STATICFILES_DIRS = [
 
 STATICFILES_STORAGE="whitenoise.storage.CompressedManifestStaticFilesStorage"
 
+MIDDLEWARE = [
+    "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
+]
 # ao rodar o python manage.py collectstatic ele ira salvar os arquivos aqui:
 
 # Default primary key field type
