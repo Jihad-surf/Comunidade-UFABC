@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_extensions',
     'calendarioapp',
+    'django.contrib.staticfiles',
+    'whitenoise.runserver_nostatic',  
 ]
 
 MIDDLEWARE = [
