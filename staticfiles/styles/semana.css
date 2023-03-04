@@ -3,7 +3,6 @@ table {
     border-spacing: 2px 0px;
     width: 100%;
     margin: 10px 0;
-    color: #cececef8;
   }
 
   th, td {
@@ -12,6 +11,7 @@ table {
   }
  td{
     padding: 2px 1px;
+    font-size: 13px;
  }
   th, .cell__horario:not() {
     text-align: center;
@@ -22,7 +22,7 @@ table {
     padding-bottom: 5px;
   }
   .cell__horario{
-    width: 14%;
+    width: 11%;
   }
 
   .cell__dia{
@@ -50,13 +50,15 @@ table {
       border-top: none;
     }
     td{
-      padding: 14px 10px;
+      padding: 4px 7px;
+      height: 40px;
+      font-size: 16px;
     }
 
     table {
       border-collapse: separate;
       border-spacing: 6px 0px;
-      width: 80%;
+      width: 89%;
       margin-left: auto;
       margin-right: auto;
     }
