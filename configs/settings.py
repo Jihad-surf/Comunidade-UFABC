@@ -27,9 +27,9 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['web-production-b1c9.up.railway.app', '127.0.0:1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -121,13 +121,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # coleta os arquivos estaticos que estao nesse diretorio
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'static')
+    os.path.join(BASE_DIR,'static'),
 ]
 
 # ao rodar o python manage.py collectstatic ele ira salvar os arquivos aqui:
