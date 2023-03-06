@@ -4,7 +4,7 @@ from calendarioapp.models import HorarioAula, TurmaPorRA, Salas
 # Create your views here.
 def index(request):
     dados = {}
-    num_visits = request.session.get('num_visits', 0)
+    num_visits = request.session.get('num_visits')
     dados['num_visits'] =  num_visits
 
     if 'ra' in request.GET:
