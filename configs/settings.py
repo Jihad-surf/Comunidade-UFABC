@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'django_extensions',
     'calendarioapp',
     'whitenoise.runserver_nostatic',  
-    'hitcount',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +55,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
-    'hitcount.middleware.HitCountMiddleware',
 ]
 
 ROOT_URLCONF = 'configs.urls'

@@ -1,10 +1,17 @@
 from django.db import models
 
 # Create your models here.
-from hitcount.models import HitCountMixin, HitCount
 
-class MyModel(models.Model, HitCountMixin):
-    hit_count_generic = models.OneToOneField(HitCount, related_name='hit_count_generic', null=True, blank=True, on_delete=models.CASCADE)
+class Count(models.Model):
+    url = models.CharField(max_length=200, unique=True)
+    count = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.url
+
+    def increment_count(self):
+        self.count += 1
+        self.save()
 
 class HorarioAula(models.Model):
     DIA_SEMANA_CHOICES = [
