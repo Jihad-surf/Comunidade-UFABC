@@ -1,15 +1,19 @@
 from django.shortcuts import render
-from calendarioapp.models import HorarioAula, TurmaPorRA, Salas
+from calendarioapp.models import MyModel, TurmaPorRA, Salas
+from hitcount.views import HitCountDetailView
 
 # Create your views here.
 def index(request):
+    my_object = MyModel.objects.first()
     dados = {}
-    num_visits = '0'
-    dados['num_visits'] =  num_visits
+    dados['num_visits'] = my_object.hit_count_generic.hits
 
     if 'ra' in request.GET:
         ra = request.GET['ra']
         materias = TurmaPorRA.objects.filter(ra=ra)
+
+        my_object.hit_count_generic.hit()
+        dados['num_visits'] = my_object.hit_count_generic.hits
 
         dias_for = ['segunda', 'terça', 'quarta', 'quinta', 'sexta']
         horarios_for =['8', '10','14','16','19', '21']
