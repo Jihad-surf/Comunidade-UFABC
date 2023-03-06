@@ -17,7 +17,7 @@ def index(request):
         dados['num_visits'] = page_view.count
 
         dias_for = ['segunda', 'terça', 'quarta', 'quinta', 'sexta']
-        horarios_for =['8', '10','14','16','19', '21']
+        horarios_for =['8', '10','14','16','17','18','19', '21']
         semanas = ['q1','q2']
         colors = ['#fff8bbf8', '#bbc9fff8', '#ceffbbf8', '#fcbbfff8', '#ffbbbbf8', '#bbffbef8', '#ffe7bbf8', '#cececef8']
         
@@ -127,6 +127,19 @@ def index(request):
                                     dados['q2'+dia_for+'_16'] = turma + ' • ' + sala
                                     dados['q1'+dia_for+'_16cor'] = colors[i]
                                     dados['q2'+dia_for+'_16cor'] = colors[i]
+                            
+                            elif horario == "17:00":
+                                if frequencia == 'quinzenal I':
+                                    dados['q1'+dia_for+'_18']= 'Começa as 17 ' + turma + ' • ' + sala 
+                                    dados['q1'+dia_for+'_18cor'] = colors[i] 
+                                elif frequencia == 'quinzenal II':
+                                    dados['q2'+dia_for+'_18'] = 'Começa as 17 ' +turma + ' • ' + sala
+                                    dados['q2'+dia_for+'_18cor'] = colors[i] 
+                                else:
+                                    dados['q1'+dia_for+'_18'] = 'Começa as 17 ' +turma + ' • ' + sala
+                                    dados['q2'+dia_for+'_18'] = 'Começa as 17 ' +turma + ' • ' + sala
+                                    dados['q1'+dia_for+'_18cor'] = colors[i]
+                                    dados['q2'+dia_for+'_18cor'] = colors[i] 
 
                             elif horario == "19:00":
                                 if frequencia == 'quinzenal I':
