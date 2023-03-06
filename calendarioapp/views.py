@@ -4,13 +4,10 @@ from calendarioapp.models import HorarioAula, TurmaPorRA, Salas
 # Create your views here.
 def index(request):
     dados = {}
-    num_visits = request.session.get('num_visits')
+    num_visits = '0'
     dados['num_visits'] =  num_visits
 
     if 'ra' in request.GET:
-        request.session['num_visits'] = num_visits + 1
-        dados['num_visits'] =  num_visits
-
         ra = request.GET['ra']
         materias = TurmaPorRA.objects.filter(ra=ra)
 
