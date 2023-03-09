@@ -19,6 +19,7 @@
         <input id="ra" name= 'ra'type="text" required>
         <button> buscar </button>
     </form>
+    <h2 class="semana_atual">Estamos na {{semana}}</h2>
     <section class="semana1">
         <h2 class="semana1__titulo">Semana 1</h2>
         <table>
@@ -179,9 +180,8 @@
             </tbody>
         </table>
     </section>
-    <section>
-        <p>Observações</p>
-        <p>Quantidade de grades solicitas: {{ num_visits }} </p>
+    <section class="solicitacoes">
+        <p class="texto">{{ num_visits }} <br>solicitações</p>
     </section>
 </body>
 </html>

@@ -1,12 +1,29 @@
 from django.shortcuts import render
 from calendarioapp.models import Count, TurmaPorRA, Salas
+from datetime import date
 
 # Create your views here.
+
+def semana_atual():
+    hoje = date.today().strftime("%d-%m")
+
+    semana1 = ['08-03','09-03','10-03','11-04','19-03','20-03','21-03', '22-03', '23-03', '24-03', '25-03', '02-04', '03-04', '04-04', '05-04', '06-04', '07-04', '08-04', '16-04', '17-04', '18-04', '19-04', '20-04', '21-04', '22-04',]
+    semana2 = ['12-03', '13-03','14-03','15-03','16-03','17-03','18-03', '26-03', '27-03', '28-03', '29-03', '30-03', '31-03','01-04', '09-04','10-04', '11-04', '12-04', '13-04', '14-04', '15-04', '23-04', '24-04', '25-04', '26-04', '27-04', '28-04', '29-04',]
+
+    if hoje in semana1:
+        return 'semana 1'
+    elif hoje in semana2:
+        return 'semana 2'
+    else:
+        return ''
+
 def index(request):
     ra=''
     page_view,created  = Count.objects.get_or_create(url=ra)
     dados = {}
     dados['num_visits'] = page_view.count
+
+    dados['semana'] = semana_atual()
 
     if 'ra' in request.GET:
         ra = request.GET['ra']
@@ -207,3 +224,5 @@ def index(request):
             i+=1
 
     return render(request, 'calendario/index.html',dados)
+
+

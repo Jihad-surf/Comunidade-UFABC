@@ -32,6 +32,7 @@ table {
   h2{
     text-align: center;
     margin-bottom: 15px;
+    color: #00c5fb;
   }
   .cell__horario-linha1 {
     background-color: #efefefc3;
@@ -61,5 +62,6 @@ table {
       width: 89%;
       margin-left: auto;
       margin-right: auto;
+      background-color: black;
     }
   }
