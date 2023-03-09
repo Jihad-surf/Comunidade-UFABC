@@ -88,3 +88,66 @@ header{
     border-radius: 15px;
   }  
 
+  .atualizacoes{
+    padding: 15px;
+    background-color: #e6ffe6;
+  }
+  .atualizacoes p{
+    font-size: 19px;
+    font-weight: bold;
+  }
+  ul {
+    list-style: disc;
+    padding-left: 40px;
+    padding-top: 15px;
+  }
+  li {
+    padding-top: 8px;
+  }
+
+.card {
+  background: rgb(180,205,178);
+  background: linear-gradient(0deg, rgb(140, 210, 135) 0%, rgb(202, 248, 199) 75%, rgba(230,255,230,1) 100%);
+  width: 100%;
+  text-align: center;
+  padding: 1.2em;
+  padding-block: 1.8em;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  margin: 0 auto;
+}
+.card__text span {
+  font-family: 'Alfa Slab One', cursive;
+  position: relative;
+  display: inline-block;
+  color: #000000;
+  text-transform: uppercase;
+  animation: letterup 10s infinite;
+  animation-delay: calc(.2s * var(--i));
+  animation-duration: 8s; 
+  margin-top: 9px;
+  
+}
+@keyframes letterup {
+  
+  5% {
+    transform: translateY(-8px)
+  }
+  20% {
+    transform: translateY(0)
+  }
+}
+a:link, a:visited {
+  text-decoration: none;
+  color: #000000;
+  font-family: 'Alfa Slab One', cursive;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
