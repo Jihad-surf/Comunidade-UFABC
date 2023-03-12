@@ -1,6 +1,7 @@
 from django.urls import path
-from calendarioapp.views import index
+from calendarioapp.views import index, cardapio
 
 urlpatterns = [ 
-    path('',index),
+    path('',index, name='home'),
+    path('cardapio',cardapio, name='cardapio')
 ]

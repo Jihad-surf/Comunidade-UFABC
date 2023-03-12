@@ -13,6 +13,10 @@
     <header class="cabecalho">
         <h1>Montador de Grades </h1>
         <img class="logo" src="{% static 'img/logo.png' %}" alt="logo UFABC">
+        <div class="menu">
+            <a  href="{% url 'cardapio' %}">Cardapio</a>
+            <a  href="{% url 'home' %}">Minha Grade</a>
+        </div>
     </header>
     <form method="get">
         <label for="ra">Insira o seu RA:</label>

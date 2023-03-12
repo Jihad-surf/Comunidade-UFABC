@@ -33,10 +33,10 @@ def run():
             df.loc[i, 'dia2'] = dados[3].split()[0]
             df.loc[i, 'horario2'] = dados[3].split()[2]
             df.loc[i, 'horario2_fim'] = dados[3].split()[4]
-            if len(dados[1].replace(' ', '').split('sala')) == 1:
-                df.loc[i, 'sala2'] = dados[1].replace(' ', '').split('sala')[0]
+            if len(dados[4].replace(' ', '').split('sala')) == 1:
+                df.loc[i, 'sala2'] = dados[4].replace(' ', '').split('sala')[0]
             else:
-                df.loc[i, 'sala2'] = dados[1].replace(' ', '').split('sala')[1]
+                df.loc[i, 'sala2'] = dados[4].replace(' ', '').split('sala')[1]
             df.loc[i, 'frequencia2'] = dados[5]
             
         if len(dados)>=8:

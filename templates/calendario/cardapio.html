@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=devide-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+    <title>UfabcGrade</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <h1>Montador de Grades </h1>
+        <img class="logo" src="{% static 'img/logo.png' %}" alt="logo UFABC">
+        <div class="menu">
+            <a  href="{% url 'cardapio' %}">Cardapio</a>
+            <a  href="{% url 'home' %}">Minha Grade</a>
+        </div>
+    </header>
+    <p>Vai no restaurante e descobre :) rs<br> Brinks, Em Breve
+    </p> 
