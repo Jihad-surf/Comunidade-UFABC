@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from calendarioapp.models import Count, TurmaPorRA, Salas
+from calendarioapp.models import Count, TurmaPorRA, Salas, Cardapio
 from datetime import date, datetime
 
 # Create your views here.
@@ -226,7 +226,7 @@ def index(request):
     return render(request, 'calendario/index.html',dados)
 
 def cardapio(request):
-    dia = datetime.now().strftime("%A")
-    #if dia == 'Monday':
+    data = Cardapio.objects.get()  # recupere o objeto OCR do banco de dados
+    context = {'dados': data}  # coloque o objeto em um dicionário para passar para o contexto
         
-    return render(request, 'calendario/cardapio.html', )
+    return render(request, 'calendario/cardapio.html', context)

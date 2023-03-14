@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=devide-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'styles/reset.css' %}">
     <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/cardapio.css' %}">
     <title>UfabcGrade</title>
 </head>
 <body>
@@ -18,5 +19,181 @@
             <a  href="{% url 'home' %}">Minha Grade</a>
         </div>
     </header>
-    <p>Vai no restaurante e descobre :) rs<br> Brinks, Em Breve
-    </p> 
+    <div class="cardapio">
+        <!--Segunda-->
+        <h2>{{dados.seg_dia}}</h2>
+        <h3>Almoço</h3>
+        <ul>
+            <li>
+                <strong>Prato Principal:</strong> {{dados.seg_principal_a}}
+            </li>
+            <li>
+                <strong>Vegetatiano:</strong> {{dados.seg_veg_a}}
+            </li>
+            <li>
+                <strong>Guarnição:</strong> {{dados.seg_guarnicao_a}}
+            </li>
+        </ul>
+        <h3>Janta</h3>
+        <ul>
+            <li>
+                <strong>Prato Principal:</strong> {{dados.seg_principal_j}}
+            </li>
+            <li>
+                <strong>Vegetatiano:</strong> {{dados.seg_veg_j}}
+            </li>
+            <li>
+                <strong>Guarnição:</strong>{{dados.seg_guarnicao_j}}
+            </li>
+        </ul>
+        <h3>Saladas</h3>
+        <p>{{dados.seg_saladas}}</p>
+        <h3>Sobremesas</h3>
+        <p>{{dados.seg_sobremesa}}</p>
+
+        <!--terca-->
+        <h2>{{dados.ter_dia}}</h2>
+        <h3>Almoço</h3>
+        <ul>
+            <li>
+                <strong>Prato Principal:</strong> {{dados.ter_principal_a}}
+            </li>
+            <li>
+                <strong>Vegetatiano:</strong> {{dados.ter_veg_a}}
+            </li>
+            <li>
+                <strong>Guarnição:</strong> {{dados.ter_guarnicao_a}}
+            </li>
+        </ul>
+        <h3>Janta</h3>
+        <ul>
+            <li>
+                <strong>Prato Principal:</strong> {{dados.ter_principal_j}}
+            </li>
+            <li>
+                <strong>Vegetatiano:</strong> {{dados.ter_veg_j}}
+            </li>
+            <li>
+                <strong>Guarnição:</strong>{{dados.ter_guarnicao_j}}
+            </li>
+        </ul>
+        <h3>Saladas</h3>
+        <p>{{dados.ter_saladas}}</p>
+        <h3>Sobremesas</h3>
+        <p>{{dados.ter_sobremesa}}</p>
+
+        <!--quarta-->
+        <h2>{{dados.quar_dia}}</h2>
+        <h3>Almoço</h3>
+        <ul>
+            <li>
+                <strong>Prato Principal:</strong> {{dados.quar_principal_a}}
+            </li>
+            <li>
+                <strong>Vegetatiano:</strong> {{dados.quar_veg_a}}
+            </li>
+            <li>
+                <strong>Guarnição:</strong> {{dados.quar_guarnicao_a}}
+            </li>
+        </ul>
+        <h3>Janta</h3>
+        <ul>
+            <li>
+                <strong>Prato Principal:</strong> {{dados.quar_principal_j}}
+            </li>
+            <li>
+                <strong>Vegetatiano:</strong> {{dados.quar_veg_j}}
+            </li>
+            <li>
+                <strong>Guarnição:</strong>{{dados.quar_guarnicao_j}}
+            </li>
+        </ul>
+        <h3>Saladas</h3>
+        <p>{{dados.quar_saladas}}</p>
+        <h3>Sobremesas</h3>
+        <p>{{dados.quar_sobremesa}}</p>
+
+        <!--quinta-->
+        <h2>{{dados.quinta_dia}}</h2>
+        <h3>Almoço</h3>
+        <ul>
+            <li>
+                <strong>Prato Principal:</strong> {{dados.quinta_principal_a}}
+            </li>
+            <li>
+                <strong>Vegetatiano:</strong> {{dados.quinta_veg_a}}
+            </li>
+            <li>
+                <strong>Guarnição:</strong> {{dados.quinta_guarnicao_a}}
+            </li>
+        </ul>
+        <h3>Janta</h3>
+        <ul>
+            <li>
+                <strong>Prato Principal:</strong> {{dados.quinta_principal_j}}
+            </li>
+            <li>
+                <strong>Vegetatiano:</strong> {{dados.quinta_veg_j}}
+            </li>
+            <li>
+                <strong>Guarnição:</strong>{{dados.quinta_guarnicao_j}}
+            </li>
+        </ul>
+        <h3>Saladas</h3>
+        <p>{{dados.quinta_saladas}}</p>
+        <h3>Sobremesas</h3>
+        <p>{{dados.quinta_sobremesa}}</p>
+
+        <!--sexta-->
+        <h2>{{dados.sexta_dia}}</h2>
+        <h3>Almoço</h3>
+        <ul>
+            <li>
+                <strong>Prato Principal:</strong> {{dados.sexta_principal_a}}
+            </li>
+            <li>
+                <strong>Vegetatiano:</strong> {{dados.sexta_veg_a}}
+            </li>
+            <li>
+                <strong>Guarnição:</strong> {{dados.sexta_guarnicao_a}}
+            </li>
+        </ul>
+        <h3>Janta</h3>
+        <ul>
+            <li>
+                <strong>Prato Principal:</strong> {{dados.sexta_principal_j}}
+            </li>
+            <li>
+                <strong>Vegetatiano:</strong> {{dados.sexta_veg_j}}
+            </li>
+            <li>
+                <strong>Guarnição:</strong>{{dados.sexta_guarnicao_j}}
+            </li>
+        </ul>
+        <h3>Saladas</h3>
+        <p>{{dados.sexta_saladas}}</p>
+        <h3>Sobremesas</h3>
+        <p>{{dados.sexta_sobremesa}}</p>
+    </div>
+    <div class="card">
+        <div class="icon">
+            <img  src="{% static 'img/iconwhats.png' %}" alt="logo whatsapp">
+        </div>
+        <a href="https://api.whatsapp.com/send?text=Olá, gostaria de falar sobre o projeto 'Minha Grade - UFABC'&phone=5511997988776">Clique para contato</a>
+        <div class="card__text">
+            Desenvolvido por<br>
+            <span style="--i:10">J</span>
+            <span style="--i:11">I</span>
+            <span style="--i:12">H</span>
+            <span style="--i:13">A</span>
+            <span style="--i:14">D</span>
+            <span style="--i:1"> </span>
+            <span style="--i:17">R</span>
+            <span style="--i:18">A</span>
+            <span style="--i:19">H</span>
+            <span style="--i:20">M</span>
+            <span style="--i:21">A</span>
+            <span style="--i:22">N</span>
+        </div>
+</body>
+</html>

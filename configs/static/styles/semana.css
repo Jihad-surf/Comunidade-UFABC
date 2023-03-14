@@ -161,7 +161,7 @@ color: #000000;
 text-transform: uppercase;
 animation: letterup 10s infinite;
 animation-delay: calc(.2s * var(--i));
-animation-duration: 8s; 
+animation-duration: 8s;
 margin-top: 9px;
 
 }

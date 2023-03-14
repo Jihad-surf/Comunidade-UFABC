@@ -43,3 +43,6 @@ header{
     padding: 0 8px;
     color: #ffffff;
 }
+.menu a:last-of-type{
+    border-right: none;
+}

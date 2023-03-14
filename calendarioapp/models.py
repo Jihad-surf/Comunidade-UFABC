@@ -74,3 +74,69 @@ class Salas(models.Model):
     horario6_fim=models.CharField(max_length=30, default='')
     sala6=models.CharField(max_length=30, default='')
     frequencia6=models.CharField(max_length=30, default='')
+
+class Cardapio(models.Model):
+    #seg
+    seg_dia=models.CharField(max_length=250,default='')
+    seg_principal_a=models.CharField(max_length=250,default='')
+    seg_veg_a=models.CharField(max_length=250,default='')
+    seg_guarnicao_a=models.CharField(max_length=250,default='')
+
+    seg_principal_j=models.CharField(max_length=250,default='')
+    seg_veg_j=models.CharField(max_length=250,default='')
+    seg_guarnicao_j=models.CharField(max_length=250,default='')
+
+    seg_saladas=models.CharField(max_length=250,default='')
+    seg_sobremesa=models.CharField(max_length=250,default='')
+
+    #terca
+    ter_dia=models.CharField(max_length=250,default='')
+    ter_principal_a=models.CharField(max_length=250,default='')
+    ter_veg_a=models.CharField(max_length=250,default='')
+    ter_guarnicao_a=models.CharField(max_length=250,default='')
+
+    ter_principal_j=models.CharField(max_length=250,default='')
+    ter_veg_j=models.CharField(max_length=250,default='')
+    ter_guarnicao_j=models.CharField(max_length=250,default='')
+
+    ter_saladas=models.CharField(max_length=250,default='')
+    ter_sobremesa=models.CharField(max_length=250,default='')
+
+    #quarta
+    quar_dia=models.CharField(max_length=250,default='')
+    quar_principal_a=models.CharField(max_length=250,default='')
+    quar_veg_a=models.CharField(max_length=250,default='')
+    quar_guarnicao_a=models.CharField(max_length=250,default='')
+
+    quar_principal_j=models.CharField(max_length=250,default='')
+    quar_veg_j=models.CharField(max_length=250,default='')
+    quar_guarnicao_j=models.CharField(max_length=250,default='')
+
+    quar_saladas=models.CharField(max_length=250,default='')
+    quar_sobremesa=models.CharField(max_length=250,default='')
+
+    #quinta
+    quinta_dia=models.CharField(max_length=250,default='')
+    quinta_principal_a=models.CharField(max_length=250,default='')
+    quinta_veg_a=models.CharField(max_length=250,default='')
+    quinta_guarnicao_a=models.CharField(max_length=250,default='')
+
+    quinta_principal_j=models.CharField(max_length=250,default='')
+    quinta_veg_j=models.CharField(max_length=250,default='')
+    quinta_guarnicao_j=models.CharField(max_length=250,default='')
+
+    quinta_saladas=models.CharField(max_length=250,default='')
+    quinta_sobremesa=models.CharField(max_length=250,default='')
+
+    #sexta
+    sexta_dia=models.CharField(max_length=250,default='')
+    sexta_principal_a=models.CharField(max_length=250,default='')
+    sexta_veg_a=models.CharField(max_length=250,default='')
+    sexta_guarnicao_a=models.CharField(max_length=250,default='')
+
+    sexta_principal_j=models.CharField(max_length=250,default='')
+    sexta_veg_j=models.CharField(max_length=250,default='')
+    sexta_guarnicao_j=models.CharField(max_length=250,default='')
+
+    sexta_saladas=models.CharField(max_length=250,default='')
+    sexta_sobremesa=models.CharField(max_length=250,default='')
