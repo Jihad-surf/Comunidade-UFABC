@@ -1,15 +1,16 @@
 from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.chrome.service import Service
+#from webdriver_manager.chrome import ChromeDriverManager
+#from selenium.webdriver.chrome.service import Service
 import time
 from calendarioapp.models import Cardapio
 from apscheduler.schedulers.background import BackgroundScheduler
-from apscheduler.triggers.interval import IntervalTrigger
+#from apscheduler.triggers.interval import IntervalTrigger
 
 
 def cardapio():
-    servico = Service(ChromeDriverManager().install())
-    navegador = webdriver.Chrome(service=servico)
+    #servico = Service(ChromeDriverManager().install())
+    #navegador = webdriver.Chrome(service=servico)
+    navegador = webdriver.Chrome()
 
     navegador.get("https://proap.ufabc.edu.br/nutricao-e-restaurantes-universitarios/cardapio-semanal")
     time.sleep(2)
@@ -19,14 +20,14 @@ def cardapio():
     seg_veg_a = navegador.find_element('xpath',
                            '//*[@id="content-section"]/div[1]/div/table/tbody/tr[2]/td[1]/ul[1]/li[2]').text
     seg_guarnicao_a = navegador.find_element('xpath',
-                           '//*[@id="content-section"]/div[1]/div/table/tbody/tr[2]/td[1]/ul[1]/li[2]').text
+                           '//*[@id="content-section"]/div[1]/div/table/tbody/tr[2]/td[1]/ul[1]/li[3]').text
     
     seg_principal_j = navegador.find_element('xpath',
                            '//*[@id="content-section"]/div[1]/div/table/tbody/tr[2]/td[1]/ul[2]/li[1]').text
     seg_veg_j = navegador.find_element('xpath',
                            '//*[@id="content-section"]/div[1]/div/table/tbody/tr[2]/td[1]/ul[2]/li[2]').text
     seg_guarnicao_j = navegador.find_element('xpath',
-                           '//*[@id="content-section"]/div[1]/div/table/tbody/tr[2]/td[1]/ul[2]/li[2]').text
+                           '//*[@id="content-section"]/div[1]/div/table/tbody/tr[2]/td[1]/ul[2]/li[3]').text
     
     seg_saladas = navegador.find_element('xpath',
                                          '//*[@id="content-section"]/div[1]/div/table/tbody/tr[2]/td[1]/ul[3]/li').text
@@ -39,14 +40,14 @@ def cardapio():
     ter_veg_a = navegador.find_element('xpath',
                            '//*[@id="content-section"]/div[1]/div/table/tbody/tr[4]/td[1]/ul[1]/li[2]').text
     ter_guarnicao_a = navegador.find_element('xpath',
-                           '//*[@id="content-section"]/div[1]/div/table/tbody/tr[4]/td[1]/ul[1]/li[2]').text
+                           '//*[@id="content-section"]/div[1]/div/table/tbody/tr[4]/td[1]/ul[1]/li[3]').text
     
     ter_principal_j = navegador.find_element('xpath',
                            '//*[@id="content-section"]/div[1]/div/table/tbody/tr[4]/td[1]/ul[2]/li[1]').text
     ter_veg_j = navegador.find_element('xpath',
                            '//*[@id="content-section"]/div[1]/div/table/tbody/tr[4]/td[1]/ul[2]/li[2]').text
     ter_guarnicao_j = navegador.find_element('xpath',
-                           '//*[@id="content-section"]/div[1]/div/table/tbody/tr[4]/td[1]/ul[2]/li[2]').text
+                           '//*[@id="content-section"]/div[1]/div/table/tbody/tr[4]/td[1]/ul[2]/li[3]').text
     
     ter_saladas = navegador.find_element('xpath',
                                          '//*[@id="content-section"]/div[1]/div/table/tbody/tr[4]/td[1]/ul[3]/li').text
@@ -59,14 +60,14 @@ def cardapio():
     quar_veg_a = navegador.find_element('xpath',
                            '//*[@id="content-section"]/div[1]/div/table/tbody/tr[6]/td[1]/ul[1]/li[2]').text
     quar_guarnicao_a = navegador.find_element('xpath',
-                           '//*[@id="content-section"]/div[1]/div/table/tbody/tr[6]/td[1]/ul[1]/li[2]').text
+                           '//*[@id="content-section"]/div[1]/div/table/tbody/tr[6]/td[1]/ul[1]/li[3]').text
     
     quar_principal_j = navegador.find_element('xpath',
                            '//*[@id="content-section"]/div[1]/div/table/tbody/tr[6]/td[1]/ul[2]/li[1]').text
     quar_veg_j = navegador.find_element('xpath',
                            '//*[@id="content-section"]/div[1]/div/table/tbody/tr[6]/td[1]/ul[2]/li[2]').text
     quar_guarnicao_j = navegador.find_element('xpath',
-                           '//*[@id="content-section"]/div[1]/div/table/tbody/tr[6]/td[1]/ul[2]/li[2]').text
+                           '//*[@id="content-section"]/div[1]/div/table/tbody/tr[6]/td[1]/ul[2]/li[3]').text
     
     quar_saladas = navegador.find_element('xpath',
                                          '//*[@id="content-section"]/div[1]/div/table/tbody/tr[6]/td[1]/ul[3]/li').text
@@ -79,14 +80,14 @@ def cardapio():
     quinta_veg_a = navegador.find_element('xpath',
                            '//*[@id="content-section"]/div[1]/div/table/tbody/tr[8]/td[1]/ul[1]/li[2]').text
     quinta_guarnicao_a = navegador.find_element('xpath',
-                           '//*[@id="content-section"]/div[1]/div/table/tbody/tr[8]/td[1]/ul[1]/li[2]').text
+                           '//*[@id="content-section"]/div[1]/div/table/tbody/tr[8]/td[1]/ul[1]/li[3]').text
     
     quinta_principal_j = navegador.find_element('xpath',
                            '//*[@id="content-section"]/div[1]/div/table/tbody/tr[8]/td[1]/ul[2]/li[1]').text
     quinta_veg_j = navegador.find_element('xpath',
                            '//*[@id="content-section"]/div[1]/div/table/tbody/tr[8]/td[1]/ul[2]/li[2]').text
     quinta_guarnicao_j = navegador.find_element('xpath',
-                           '//*[@id="content-section"]/div[1]/div/table/tbody/tr[8]/td[1]/ul[2]/li[2]').text
+                           '//*[@id="content-section"]/div[1]/div/table/tbody/tr[8]/td[1]/ul[2]/li[3]').text
     
     quinta_saladas = navegador.find_element('xpath',
                                          '//*[@id="content-section"]/div[1]/div/table/tbody/tr[8]/td[1]/ul[3]/li').text
@@ -99,14 +100,14 @@ def cardapio():
     sexta_veg_a = navegador.find_element('xpath',
                            '//*[@id="content-section"]/div[1]/div/table/tbody/tr[10]/td[1]/ul[1]/li[2]').text
     sexta_guarnicao_a = navegador.find_element('xpath',
-                           '//*[@id="content-section"]/div[1]/div/table/tbody/tr[10]/td[1]/ul[1]/li[2]').text
+                           '//*[@id="content-section"]/div[1]/div/table/tbody/tr[10]/td[1]/ul[1]/li[3]').text
     
     sexta_principal_j = navegador.find_element('xpath',
                            '//*[@id="content-section"]/div[1]/div/table/tbody/tr[10]/td[1]/ul[2]/li[1]').text
     sexta_veg_j = navegador.find_element('xpath',
                            '//*[@id="content-section"]/div[1]/div/table/tbody/tr[10]/td[1]/ul[2]/li[2]').text
     sexta_guarnicao_j = navegador.find_element('xpath',
-                           '//*[@id="content-section"]/div[1]/div/table/tbody/tr[10]/td[1]/ul[2]/li[2]').text
+                           '//*[@id="content-section"]/div[1]/div/table/tbody/tr[10]/td[1]/ul[2]/li[3]').text
     
     sexta_saladas = navegador.find_element('xpath',
                                          '//*[@id="content-section"]/div[1]/div/table/tbody/tr[10]/td[1]/ul[3]/li').text

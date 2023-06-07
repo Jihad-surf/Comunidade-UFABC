@@ -3,18 +3,19 @@ from calendarioapp.models import Salas
 
 def run():
 
-    df = pd.read_excel(r"C:\Users\Jihad\Desktop\projetos\dados\turmas_salas_docentes_2023_1.xlsb",sheet_name=' turmas sistema atual')
+    df = pd.read_excel(r"C:\Users\Jihad\Desktop\projetos\dados\salas_2023_2.xlsx",sheet_name='Table002 (Page 2-59)')
     df = df[['CÓDIGO DE TURMA', 'TURMA', 'Horário Teoria', 'Horário Prática','TPI','Docente Teoria','Docente Prática']]
 
-    novas_colunas = pd.DataFrame(columns=['dia1', 'horario1', 'sala1', 'frequencia1',
-                                      'dia2', 'horario2', 'sala2', 'frequencia2',
-                                      'dia3', 'horario3', 'sala3', 'frequencia3',
-                                      'dia4', 'horario4', 'sala4', 'frequencia4',
-                                      'dia5', 'horario5', 'sala5', 'frequencia5',
-                                      'dia6', 'horario6', 'sala6', 'frequencia6'])
+    novas_colunas = pd.DataFrame(columns=['dia1', 'horario1','horario1_fim', 'sala1', 'frequencia1',
+                                      'dia2', 'horario2','horario2_fim', 'sala2', 'frequencia2',
+                                      'dia3', 'horario3','horario3_fim', 'sala3', 'frequencia3',
+                                      'dia4', 'horario4','horario4_fim', 'sala4', 'frequencia4',
+                                      'dia5', 'horario5','horario5_fim', 'sala5', 'frequencia5',
+                                      'dia6', 'horario6','horario6_fim', 'sala6', 'frequencia6'])
     df = df.join(novas_colunas)
 
     df.fillna('', inplace=True)
+    df['Horário Teoria'] = df['Horário Teoria'].str.replace('\n',' ')
     i = 0
     for dados in df['Horário Teoria']:
         dados = dados.split(', ')
@@ -47,6 +48,8 @@ def run():
             df.loc[i, 'frequencia3'] = dados[8]
         i += 1
 
+    df['Horário Prática'] = df['Horário Prática'].str.replace('\n',' ')
+    
     i = 0
     for dados in df['Horário Prática']:
         dados = dados.split(', ')
