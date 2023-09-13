@@ -4,13 +4,14 @@ from PyPDF2 import PdfReader
 
 def run():
     texto_completo = ''
-    with open(r"C:\Users\Jihad\Desktop\projetos\dados\2023_2_matriculas_deferidas_pos_ajuste.pdf", 'rb') as f:
+    with open(r"C:\Users\Jihad\Desktop\projetos\dados\matriculas20233.pdf", 'rb') as f:
         pdf = PdfReader(f)
         for pagina in pdf.pages:
             texto_completo += pagina.extract_text()
     
     # Extrair as informações das colunas de interesse
-    texto_completo = texto_completo.split('21087414')[1]
+    texto_completo = texto_completo.split('11202232022')[1:] #caso pare em algum ra
+    texto_completo = ' '.join(texto_completo)
     coluna_ra = []
     coluna_turma = []
     for linha in texto_completo.split('\n'):
@@ -19,7 +20,8 @@ def run():
         campos = linha.split()
         coluna_ra.append(campos[0])
         coluna_turma.append(campos[1])
-   
+    
+    # quanbdo trocar o quad tem que deletar
     #TurmaPorRA.objects.all().delete()
     for ra, turma in zip(coluna_ra, coluna_turma):
         TurmaPorRA.objects.create(ra=ra, codigo_turma=turma)

@@ -3,9 +3,9 @@ from calendarioapp.models import Salas
 
 def run():
 
-    df = pd.read_excel(r"C:\Users\Jihad\Desktop\projetos\dados\salas_2023_2.xlsx",sheet_name='Table002 (Page 2-59)')
+    df = pd.read_excel(r"C:\Users\Jihad\Desktop\projetos\dados\salas_2023_03.xlsx",sheet_name='Table002 (Page 2-56)')
     df = df[['CÓDIGO DE TURMA', 'TURMA', 'Horário Teoria', 'Horário Prática','TPI','Docente Teoria','Docente Prática']]
-
+ 
     novas_colunas = pd.DataFrame(columns=['dia1', 'horario1','horario1_fim', 'sala1', 'frequencia1',
                                       'dia2', 'horario2','horario2_fim', 'sala2', 'frequencia2',
                                       'dia3', 'horario3','horario3_fim', 'sala3', 'frequencia3',
@@ -73,6 +73,7 @@ def run():
             df.loc[i, 'frequencia6'] = dados[8]
         i += 1
 
+    # quando trocar o quad deletar tudo antes
     Salas.objects.all().delete()
     for i, dados in df.iterrows():
         Salas.objects.create(
