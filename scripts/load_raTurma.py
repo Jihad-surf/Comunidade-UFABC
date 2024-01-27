@@ -4,13 +4,13 @@ from PyPDF2 import PdfReader
 
 def run():
     texto_completo = ''
-    with open(r"C:\Users\Jihad\Desktop\projetos\dados\matriculas20233.pdf", 'rb') as f:
+    with open(r"C:\Users\Jihad\Desktop\projetos\dados\2024_1_matriculas_deferidas_pos_ajuste.pdf", 'rb') as f:
         pdf = PdfReader(f)
         for pagina in pdf.pages:
             texto_completo += pagina.extract_text()
     
     # Extrair as informações das colunas de interesse
-    texto_completo = texto_completo.split('11202232022')[1:] #caso pare em algum ra
+    texto_completo = texto_completo.split('11202321319')[1:] #caso pare em algum ra, comentar as duas linhas abaixo
     texto_completo = ' '.join(texto_completo)
     coluna_ra = []
     coluna_turma = []

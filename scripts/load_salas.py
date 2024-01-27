@@ -3,7 +3,7 @@ from calendarioapp.models import Salas
 
 def run():
 
-    df = pd.read_excel(r"C:\Users\Jihad\Desktop\projetos\dados\salas_2023_03.xlsx",sheet_name='Table002 (Page 2-56)')
+    df = pd.read_excel(r"C:\Users\Jihad\Desktop\projetos\dados\aulas202401.xlsx",sheet_name='Table002 (Page 2-57)')
     df = df[['CÓDIGO DE TURMA', 'TURMA', 'Horário Teoria', 'Horário Prática','TPI','Docente Teoria','Docente Prática']]
  
     novas_colunas = pd.DataFrame(columns=['dia1', 'horario1','horario1_fim', 'sala1', 'frequencia1',

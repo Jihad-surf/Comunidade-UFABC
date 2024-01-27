@@ -1,3 +1,5 @@
+"""
+
 from selenium import webdriver
 #from webdriver_manager.chrome import ChromeDriverManager
 #from selenium.webdriver.chrome.service import Service
@@ -203,8 +205,9 @@ def start_cardapio():
     # Iniciando o agendador
     scheduler.start()
 
-"""
+
 trigger_2 = IntervalTrigger(seconds=5)
 scheduler.add_job(teste, trigger=trigger_2, timezone="America/Sao_Paulo")
 scheduler.start()
-"""   
+
+"""
