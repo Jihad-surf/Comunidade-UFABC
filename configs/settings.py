@@ -27,7 +27,7 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -86,9 +86,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'railway',
         'USER': 'root',
-        'PASSWORD': 'RtHydl6wrbToV4Lza0H7',
-        'HOST':'containers-us-west-123.railway.app',
-        'PORT':'5546',
+        'PASSWORD': 'dgcd34aHdfFDB5HEbc1B2HefB-gg63Cb',
+        'HOST':'roundhouse.proxy.rlwy.net',
+        'PORT':'39616',
     }}
 
         #'ENGINE': 'django.db.backends.sqlite3',
