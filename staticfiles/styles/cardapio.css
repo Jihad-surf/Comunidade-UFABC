@@ -1,0 +1,29 @@
+.cardapio h2 {
+    color: #094405;
+    padding: 8px 0;
+    font-weight: bold;
+    background-color: rgb(232, 248, 242);
+    border-bottom: 1px solid rgb(66, 66, 66);
+    margin-top: 10px;
+}
+
+.cardapio h2:first-of-type {
+    margin-top: 0;
+  }
+
+.cardapio h3 {
+    color: #063203;
+    font-weight: bold;
+    padding: 0 0 0 20px;
+    font-size: 18px;
+}
+
+ul {
+    padding: 6px 0 8px 55px;
+}
+p{
+    padding: 5px 0 4px 40px;
+}
+strong{
+    font-weight: bold;
+}
