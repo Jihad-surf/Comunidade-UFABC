@@ -12,8 +12,5 @@ RUN pip install -r requirements.txt
 
 ENV PYTHONUNBUFFERED=1
 
-# Expor a porta em que a aplicação será executada
-EXPOSE 8000
-
-# Executar o servidor do Django
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Executar com gunicorn na porta definida pelo Railway ($PORT)
+CMD gunicorn configs.wsgi --bind 0.0.0.0:$PORT
