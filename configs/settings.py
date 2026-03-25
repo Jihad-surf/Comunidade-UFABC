@@ -84,11 +84,11 @@ WSGI_APPLICATION = 'configs.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'railway',
-        'USER': 'root',
-        'PASSWORD': 'dgcd34aHdfFDB5HEbc1B2HefB-gg63Cb',
-        'HOST':'roundhouse.proxy.rlwy.net',
-        'PORT':'39616',
+        'NAME': os.getenv('DB_NAME', 'railway'),
+        'USER': os.getenv('DB_USER', 'root'),
+        'PASSWORD': os.getenv('DB_PASSWORD', ''),
+        'HOST': os.getenv('DB_HOST', 'localhost'),
+        'PORT': os.getenv('DB_PORT', '3306'),
     }}
 
         #'ENGINE': 'django.db.backends.sqlite3',
